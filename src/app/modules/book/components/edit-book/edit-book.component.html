@@ -1,0 +1,22 @@
+<div class="navigation-bar">
+  <p>Book CRUD</p>
+  <button mat-raised-button color="warn"  routerLink="/">Back</button>
+</div>
+
+<div class="book-container">
+  <div class="book-form" *ngIf="book">
+    <mat-form-field class="line">
+      <input matInput placeholder="Title" [(ngModel)]="book.title">
+    </mat-form-field>
+    <mat-form-field class="line">
+      <input matInput placeholder="Author" [(ngModel)]="book.author">
+    </mat-form-field>
+    <mat-form-field class="line">
+      <input matInput placeholder="Publisher" [(ngModel)]="book.publisher">
+    </mat-form-field>
+    <mat-form-field class="line">
+      <input matInput placeholder="Publish Date(yyyy/mm/dd)" [(ngModel)]="book.publishDate">
+    </mat-form-field>
+    <button mat-raised-button color="primary" (click)="saveBook()">Save</button>
+  </div>
+</div>

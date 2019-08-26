@@ -1,0 +1,43 @@
+<div class="navigation-bar">
+<p>Book CRUD</p>
+<button mat-raised-button color="primary"  routerLink="/new">Add Book</button>
+</div>
+
+<div class="book-container">
+
+  <div class="list-header">
+    <mat-form-field>
+      <input matInput placeholder="Search" (input)="onSearch($event.target.value)">
+    </mat-form-field>
+    <mat-form-field class="sort-dropdown">
+      <mat-label>Sort By:</mat-label>
+      <mat-select>
+        <mat-option *ngFor="let field of sortFields" (click)="onSortClick(field)">
+          {{field.label}}
+          <mat-icon *ngIf="field.checked">check</mat-icon>
+        </mat-option>
+        <mat-optgroup>
+          <label class="line"></label>
+        </mat-optgroup>
+        <mat-option *ngFor="let field of sortOrders" (click)="onOrderClick(field)" >
+          {{field.label}}
+          <mat-icon *ngIf="field.checked">check</mat-icon>
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+  </div>
+
+
+
+  <div role="list">
+    <div class="book-item" *ngFor="let book of bookList">
+      <label class="book-title" (click)="showActionModal(book)">{{book.title}}</label>
+      <label class="book-author"><span>Author: </span>{{book.author}}</label>
+      <label class="book-publisher"><span>Publisher: </span>{{book.publisher}}</label>
+      <label class="book-publish-date"><span>Pub. Date: </span>{{book.publishDate}}</label>
+      <label>------------------------------------------------------</label>
+    </div>
+  </div>
+
+
+</div>

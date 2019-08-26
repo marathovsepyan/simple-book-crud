@@ -1,0 +1,15 @@
+<div class="book-container">
+  <div class="book-item" >
+    <label class="book-title">{{book.title}}</label>
+    <label class="book-author"><span>Author: </span>{{book.author}}</label>
+    <label class="book-publisher"><span>Publisher: </span>{{book.publisher}}</label>
+    <label class="book-publish-date"><span>Pub. Date: </span>{{book.publishDate}}</label>
+    <label>------------------------------------------------------</label>
+  </div>
+  <div class="action-buttons">
+    <button mat-raised-button color="primary" (click)="dialogRef.close()" routerLink="/edit/{{book.id}}">Edit</button>
+    <button mat-raised-button color="accent" (click)="dialogRef.close(DialogActionEnum.remove)">Remove</button>
+  </div>
+</div>
+
+
